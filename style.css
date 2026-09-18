@@ -1,12 +1,10 @@
 /* ============================================================
    Local fallback CSS only.
-   All main template styling is loaded from https://calory.app/css/style.css
-   and https://calory.app/css/responsive.css in the HTML head.
-   This file ensures the reviews & screens carousels share the exact
-   same appearance even if the remote stylesheets are unreachable.
+   Main template styling loads from calory.app's CSS files.
+   These rules make the two carousels look identical even if
+   those remote stylesheets are unreachable.
    ============================================================ */
 
-/* Base */
 body {
   font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   color: #333;
@@ -19,7 +17,6 @@ body {
 img { max-width: 100%; height: auto; }
 #page { overflow: hidden; }
 
-/* Animated fallback — original template hides .animated until visible */
 .animated { visibility: hidden; }
 .visible { visibility: visible; }
 
@@ -37,9 +34,7 @@ img { max-width: 100%; height: auto; }
   border-radius: 12px;
 }
 
-/* ---------- REVIEWS CAROUSEL ---------- */
-/* Same wrapper padding + same slide widths as the screens carousel
-   so both carousels look identical. */
+/* ---------- REVIEWS CAROUSEL (same look as screens) ---------- */
 .reviews-carousel {
   position: relative;
   margin-bottom: 100px;
