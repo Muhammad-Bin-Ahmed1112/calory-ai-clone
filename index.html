@@ -820,18 +820,7 @@ Nothing overly complicated so I can use it on the go without pressing a million 
         position: relative;
     }
 
-    .study-icon {
-        width: 52px;
-        height: 52px;
-        border-radius: 12px;
-        background: linear-gradient(135deg, #6a5cff 0%, #8b7bff 100%);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 26px;
-        margin-bottom: 16px;
-    }
-
+  
     .study-title {
         font-size: 20px;
         font-weight: 700;
@@ -854,27 +843,7 @@ Nothing overly complicated so I can use it on the go without pressing a million 
     }
     .study-body a:hover { text-decoration: underline; }
 
-    .study-bullets {
-        list-style: none;
-        padding: 0;
-        margin: 0 0 20px;
-        font-size: 13.5px;
-        color: #555;
-    }
-    .study-bullets li {
-        padding-left: 22px;
-        position: relative;
-        margin-bottom: 6px;
-        line-height: 1.5;
-    }
-    .study-bullets li::before {
-        content: "✓";
-        position: absolute;
-        left: 0;
-        top: 0;
-        color: #10b981;
-        font-weight: 700;
-    }
+  
 
     .study-actions {
         display: flex;
@@ -935,8 +904,6 @@ Nothing overly complicated so I can use it on the go without pressing a million 
     <div class="study-card">
         <button class="study-close" type="button" aria-label="Close" onclick="document.getElementById('study-overlay').remove()">&times;</button>
 
-        <div class="study-icon" aria-hidden="true">📚</div>
-
         <h2 id="study-title" class="study-title">Study Project</h2>
 
         <p class="study-body">
@@ -947,7 +914,7 @@ Nothing overly complicated so I can use it on the go without pressing a million 
             <a href="https://funnmedia.com" target="_blank" rel="noopener">Funn Media</a>.
         </p>
 
-        <ul class="study-bullets">
+        <ul >
             <li>Fully local — zero external dependencies</li>
             <li>Trackers and archive scripts removed</li>
             <li>Deployed on GitHub Pages for demonstration</li>
