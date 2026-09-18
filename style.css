@@ -1,70 +1,139 @@
-/* ============================================================
-   Local fallback CSS only.
-   Main template styling loads from calory.app's CSS files.
-   These rules make the two carousels look identical even if
-   those remote stylesheets are unreachable.
-   ============================================================ */
+:root {
+  --blue: #007bff;
+  --indigo: #6610f2;
+  --purple: #6f42c1;
+  --pink: #e83e8c;
+  --red: #dc3545;
+  --orange: #fd7e14;
+  --yellow: #ffc107;
+  --green: #28a745;
+  --teal: #20c997;
+  --cyan: #17a2b8;
+  --white: #fff;
+  --gray: #6c757d;
+  --gray-dark: #343a40;
+  --primary: #007bff;
+  --secondary: #6c757d;
+  --success: #28a745;
+  --info: #17a2b8;
+  --warning: #ffc107;
+  --danger: #dc3545;
+  --light: #f8f9fa;
+  --dark: #343a40;
+  --breakpoint-xs: 0;
+  --breakpoint-sm: 576px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 992px;
+  --breakpoint-xl: 1200px;
+  --font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-font-smoothing: antialiased;
+}
 
 body {
   font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  color: #333;
   font-weight: 300;
+  color: #333;
+  font-size: 1rem;
+  line-height: 1.5;
+  text-align: left;
   margin: 0;
-  padding: 0;
+  box-sizing: border-box;
 }
 
 *, *::before, *::after { box-sizing: border-box; }
 img { max-width: 100%; height: auto; }
-#page { overflow: hidden; }
-
-.animated { visibility: hidden; }
-.visible { visibility: visible; }
 
 /* ---------- SCREENSHOTS CAROUSEL ---------- */
-.screenshots-wrap { position: relative; margin-bottom: 100px; }
+.screens-section { padding-top: 60px; padding-bottom: 100px; }
+
+.screenshots-wrap {
+  position: relative;
+  padding: 0 50px;
+}
+
+.screens-carousel {
+  padding: 20px 0;
+}
+
 .screens-carousel .carousel-item {
   padding: 0 10px;
   text-align: center;
-  opacity: 0.25;
-  transition: all 450ms ease-in-out;
+  opacity: 0.35;
+  transition: opacity 0.4s ease;
 }
-.screens-carousel .carousel-item.slick-current { opacity: 1; }
+
+.screens-carousel .carousel-item.slick-center,
+.screens-carousel .carousel-item.slick-current {
+  opacity: 1;
+}
+
 .screens-carousel .carousel-item img {
   border: solid 1px #d8d9dd;
   border-radius: 12px;
+  display: inline-block;
 }
 
-/* ---------- REVIEWS CAROUSEL (same look as screens) ---------- */
+/* ---------- REVIEWS SECTION ---------- */
+.reviews-section {
+  display: block;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+.reviews-section .section-title {
+  text-align: center;
+  margin-bottom: 40px;
+}
+.reviews-section .section-title h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  color: #1a1a2e;
+  margin-bottom: 10px;
+}
+.reviews-section .section-title p {
+  color: #777;
+  margin: 0;
+}
+
 .reviews-carousel {
   position: relative;
-  margin-bottom: 100px;
+  padding: 20px 50px;
 }
-.reviews-carousel .review-1 {
+
+.review-1 {
   width: 370px;
   padding: 30px 28px;
   margin: 0 10px;
-  text-align: center;
-  background: #fff;
+  background: #ffffff;
   border-radius: 12px;
   box-shadow: 0 4px 18px rgba(0, 0, 0, 0.06);
-  opacity: 0.25;
+  box-sizing: border-box;
+  text-align: center;
+  opacity: 0.35;
   transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
 }
-.reviews-carousel .review-1.slick-current {
+.review-1.slick-center {
   opacity: 1;
   transform: scale(1.03);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.10);
 }
-.reviews-carousel .review-1 .testimonial-avatar { margin-bottom: 6px; }
-.reviews-carousel .review-1 .testimonial-autor {
+.review-1 .testimonial-avatar { text-align: center; margin-bottom: 6px; }
+.review-1 .testimonial-autor {
   font-family: 'Montserrat', sans-serif;
   font-weight: 600;
   color: #1a1a2e;
   font-size: 1rem;
   margin: 0;
 }
-.reviews-carousel .review-1 .app-rating { height: 16px; margin-bottom: 15px; }
-.reviews-carousel .review-1 p {
+.review-1 .app-rating { display: block; height: 16px; margin-bottom: 15px; }
+.review-1 p {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
   color: #555;
   font-size: 0.95rem;
   line-height: 1.65;
@@ -72,59 +141,55 @@ img { max-width: 100%; height: auto; }
 }
 
 /* ---------- SHARED SLICK ARROWS & DOTS ---------- */
-.screens-carousel .slick-prev,
-.screens-carousel .slick-next,
 .reviews-carousel .slick-prev,
-.reviews-carousel .slick-next {
+.reviews-carousel .slick-next,
+.screens-carousel .slick-prev,
+.screens-carousel .slick-next {
   width: 40px;
   height: 40px;
   z-index: 4;
 }
-.screens-carousel .slick-prev:before,
-.screens-carousel .slick-next:before,
 .reviews-carousel .slick-prev:before,
-.reviews-carousel .slick-next:before {
+.reviews-carousel .slick-next:before,
+.screens-carousel .slick-prev:before,
+.screens-carousel .slick-next:before {
   font-family: 'slick';
   font-size: 28px;
-  color: #6c89ee;
+  color: #6c5ce7;
   opacity: 0.85;
 }
+.reviews-carousel .slick-prev,
 .screens-carousel .slick-prev { left: -45px; }
+.reviews-carousel .slick-next,
 .screens-carousel .slick-next { right: -45px; }
-.reviews-carousel .slick-prev { left: -45px; }
-.reviews-carousel .slick-next { right: -45px; }
 
-.screens-section .slick-dots,
-.reviews-section .slick-dots {
-  position: absolute;
-  bottom: -100px;
+.reviews-carousel .slick-dots,
+.screens-carousel .slick-dots {
+  position: relative;
+  bottom: auto;
+  margin-top: 25px;
 }
-.reviews-section .slick-dots li button:before,
-.screens-section .slick-dots li button:before {
-  content: "";
-  background: #ccc;
-  border-radius: 50%;
+.reviews-carousel .slick-dots li button:before,
+.screens-carousel .slick-dots li button:before {
+  color: #6c5ce7;
+  font-size: 10px;
+}
+.reviews-carousel .slick-dots li.slick-active button:before,
+.screens-carousel .slick-dots li.slick-active button:before {
+  color: #6c5ce7;
   opacity: 1;
-  width: 8px;
-  height: 8px;
-  left: auto;
-  transition: all ease-in-out 0.2s;
-}
-.reviews-section .slick-dots li.slick-active button:before,
-.screens-section .slick-dots li.slick-active button:before {
-  background: #666;
 }
 
 @media (max-width: 992px) {
-  .screens-carousel .slick-prev,
-  .reviews-carousel .slick-prev { left: -20px; }
-  .screens-carousel .slick-next,
-  .reviews-carousel .slick-next { right: -20px; }
+  .reviews-carousel .slick-prev,
+  .screens-carousel .slick-prev { left: -20px; }
+  .reviews-carousel .slick-next,
+  .screens-carousel .slick-next { right: -20px; }
 }
 @media (max-width: 576px) {
-  .reviews-carousel .review-1 { padding: 24px 20px; }
-  .screens-carousel .slick-prev,
-  .reviews-carousel .slick-prev { left: 0; }
-  .screens-carousel .slick-next,
-  .reviews-carousel .slick-next { right: 0; }
+  .review-1 { padding: 24px 20px; }
+  .reviews-carousel .slick-prev,
+  .screens-carousel .slick-prev { left: 0; }
+  .reviews-carousel .slick-next,
+  .screens-carousel .slick-next { right: 0; }
 }
