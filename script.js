@@ -1,88 +1,109 @@
-/* ============================================================
-   Slick carousel init for the Calory landing page.
-   The saved HTML contained Slick's already-rendered DOM,
-   but no working init. This rebuilds both carousels.
-   Autoplay: advances every 3 seconds, pauses on hover.
-   ============================================================ */
+/* =========================
+   MOBILE MENU
+========================= */
 
-jQuery(document).ready(function ($) {
+const menuToggle = document.getElementById("menuToggle");
+const navMenu = document.getElementById("navMenu");
 
-  console.log('[Calory] jQuery version:', $.fn.jquery);
-  console.log('[Calory] Slick available:', typeof $.fn.slick !== 'undefined');
+menuToggle.addEventListener("click", () => {
+  navMenu.classList.toggle("active");
+});
 
-  if (typeof $.fn.slick === 'undefined') {
-    console.error('[Calory] Slick is NOT loaded. Check the CDN <script> tag.');
-    return;
-  }
 
-  /* ---------- SCREENSHOTS CAROUSEL ---------- */
-  var $screens = $('.screens-carousel');
-  if ($screens.length) {
-    if ($screens.hasClass('slick-initialized')) {
-      $screens.slick('unslick');
-    }
-    $screens.slick({
-      slidesToShow: 5,
-      slidesToScroll: 1,
-      centerMode: true,
-      centerPadding: '50px',
-      dots: true,
-      arrows: true,
-      infinite: true,
-      speed: 1000,
+/* =========================
+   CLOSE MOBILE MENU
+========================= */
 
-      /* ----- AUTOPLAY (3 seconds) ----- */
-      autoplay: true,
-      autoplaySpeed: 3000,
-      pauseOnHover: true,
-      pauseOnFocus: true,
-      pauseOnDotsHover: true,
+document.querySelectorAll(".nav-menu a").forEach(link => {
 
-      focusOnSelect: true,
-      responsive: [
-        { breakpoint: 1200, settings: { slidesToShow: 4, centerPadding: '40px' } },
-        { breakpoint: 992,  settings: { slidesToShow: 3, centerPadding: '30px' } },
-        { breakpoint: 768,  settings: { slidesToShow: 2, centerPadding: '20px' } },
-        { breakpoint: 480,  settings: { slidesToShow: 1, centerPadding: '10px' } }
-      ]
+  link.addEventListener("click", () => {
+    navMenu.classList.remove("active");
+  });
+
+});
+
+
+/* =========================
+   FAQ ACCORDION
+========================= */
+
+const faqQuestions = document.querySelectorAll(".faq-question");
+
+faqQuestions.forEach(question => {
+
+  question.addEventListener("click", () => {
+
+    const item = question.parentElement;
+
+    document.querySelectorAll(".faq-item").forEach(otherItem => {
+
+      if (otherItem !== item) {
+        otherItem.classList.remove("active");
+
+        const icon = otherItem.querySelector(".faq-question span");
+
+        if (icon) {
+          icon.textContent = "+";
+        }
+      }
+
     });
-    console.log('[Calory] Screens carousel initialized with 3s autoplay.');
-  } else {
-    console.warn('[Calory] .screens-carousel not found.');
-  }
 
-  /* ---------- REVIEWS CAROUSEL ---------- */
-  var $reviews = $('.reviews-carousel');
-  if ($reviews.length) {
-    if ($reviews.hasClass('slick-initialized')) {
-      $reviews.slick('unslick');
+    item.classList.toggle("active");
+
+    const icon = question.querySelector("span");
+
+    if (item.classList.contains("active")) {
+      icon.textContent = "−";
+    } else {
+      icon.textContent = "+";
     }
-    $reviews.slick({
-      slidesToShow: 3,
-      slidesToScroll: 1,
-      centerMode: true,
-      centerPadding: '0px',
-      dots: true,
-      arrows: true,
-      infinite: true,
-      speed: 1000,
 
-      /* ----- AUTOPLAY (3 seconds) ----- */
-      autoplay: true,
-      autoplaySpeed: 3000,
-      pauseOnHover: true,
-      pauseOnFocus: true,
-      pauseOnDotsHover: true,
+  });
 
-      focusOnSelect: true,
-      responsive: [
-        { breakpoint: 992, settings: { slidesToShow: 2 } },
-        { breakpoint: 768, settings: { slidesToShow: 1 } }
-      ]
-    });
-    console.log('[Calory] Reviews carousel initialized with 3s autoplay.');
+});
+
+
+/* =========================
+   SCREENSHOT SLIDER
+========================= */
+
+const screenshots = document.getElementById("screenshots");
+const nextButton = document.getElementById("next");
+const prevButton = document.getElementById("prev");
+
+nextButton.addEventListener("click", () => {
+
+  screenshots.scrollBy({
+    left: 250,
+    behavior: "smooth"
+  });
+
+});
+
+
+prevButton.addEventListener("click", () => {
+
+  screenshots.scrollBy({
+    left: -250,
+    behavior: "smooth"
+  });
+
+});
+
+
+/* =========================
+   NAVBAR SCROLL EFFECT
+========================= */
+
+const header = document.getElementById("header");
+
+window.addEventListener("scroll", () => {
+
+  if (window.scrollY > 30) {
+    header.style.boxShadow = "0 3px 20px rgba(0,0,0,.1)";
   } else {
-    console.warn('[Calory] .reviews-carousel not found.');
+    header.style.boxShadow = "0 2px 15px rgba(0,0,0,.06)";
   }
 
 });
