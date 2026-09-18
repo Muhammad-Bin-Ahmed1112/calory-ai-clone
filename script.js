@@ -1,23 +1,27 @@
 /* ============================================================
-   Slick carousel init for BOTH carousels (Screens + Reviews).
-   Waits for jQuery + Slick to be ready, then initializes.
-   Both carousels share identical options so they look the same.
+   Slick carousel init for the Calory landing page.
+   The saved HTML contained Slick's already-rendered DOM,
+   but no working init. This rebuilds both carousels.
+   Autoplay: advances every 3 seconds, pauses on hover.
    ============================================================ */
 
-(function waitForSlick() {
-  if (typeof window.jQuery === 'undefined' ||
-      typeof window.jQuery.fn.slick === 'undefined') {
-    return setTimeout(waitForSlick, 50);
+jQuery(document).ready(function ($) {
+
+  console.log('[Calory] jQuery version:', $.fn.jquery);
+  console.log('[Calory] Slick available:', typeof $.fn.slick !== 'undefined');
+
+  if (typeof $.fn.slick === 'undefined') {
+    console.error('[Calory] Slick is NOT loaded. Check the CDN <script> tag.');
+    return;
   }
 
-  var $ = window.jQuery;
-
-  $(function () {
-
-    console.log('[Calory] jQuery version:', $.fn.jquery);
-    console.log('[Calory] Slick available:', typeof $.fn.slick !== 'undefined');
-
-    var carouselOptions = {
+  /* ---------- SCREENSHOTS CAROUSEL ---------- */
+  var $screens = $('.screens-carousel');
+  if ($screens.length) {
+    if ($screens.hasClass('slick-initialized')) {
+      $screens.slick('unslick');
+    }
+    $screens.slick({
       slidesToShow: 5,
       slidesToScroll: 1,
       centerMode: true,
@@ -26,11 +30,14 @@
       arrows: true,
       infinite: true,
       speed: 1000,
+
+      /* ----- AUTOPLAY (3 seconds) ----- */
       autoplay: true,
       autoplaySpeed: 3000,
       pauseOnHover: true,
       pauseOnFocus: true,
       pauseOnDotsHover: true,
+
       focusOnSelect: true,
       responsive: [
         { breakpoint: 1200, settings: { slidesToShow: 4, centerPadding: '40px' } },
@@ -38,39 +45,44 @@
         { breakpoint: 768,  settings: { slidesToShow: 2, centerPadding: '20px' } },
         { breakpoint: 480,  settings: { slidesToShow: 1, centerPadding: '10px' } }
       ]
-    };
+    });
+    console.log('[Calory] Screens carousel initialized with 3s autoplay.');
+  } else {
+    console.warn('[Calory] .screens-carousel not found.');
+  }
 
-    function resetSlick($el) {
-      if ($el.hasClass('slick-initialized')) {
-        $el.removeData('slick');
-        $el.removeClass('slick-initialized slick-slider slick-dotted');
-        $el.find('.slick-list, .slick-track, .slick-prev, .slick-next, .slick-dots').remove();
-        $el.find('.slick-slide').each(function () {
-          var $slide = $(this);
-          $slide.removeClass('slick-slide slick-active slick-center slick-cloned slick-current');
-          $slide.removeAttr('data-slick-index aria-hidden tabindex role aria-describedby style');
-        });
-        $el.find('.slick-cloned').remove();
-      }
+  /* ---------- REVIEWS CAROUSEL ---------- */
+  var $reviews = $('.reviews-carousel');
+  if ($reviews.length) {
+    if ($reviews.hasClass('slick-initialized')) {
+      $reviews.slick('unslick');
     }
+    $reviews.slick({
+      slidesToShow: 3,
+      slidesToScroll: 1,
+      centerMode: true,
+      centerPadding: '0px',
+      dots: true,
+      arrows: true,
+      infinite: true,
+      speed: 1000,
 
-    var $screens = $('.screens-carousel');
-    if ($screens.length) {
-      resetSlick($screens);
-      $screens.slick(carouselOptions);
-      console.log('[Calory] Screens carousel initialized.');
-    } else {
-      console.warn('[Calory] .screens-carousel not found.');
-    }
+      /* ----- AUTOPLAY (3 seconds) ----- */
+      autoplay: true,
+      autoplaySpeed: 3000,
+      pauseOnHover: true,
+      pauseOnFocus: true,
+      pauseOnDotsHover: true,
 
-    var $reviews = $('.reviews-carousel');
-    if ($reviews.length) {
-      resetSlick($reviews);
-      $reviews.slick(carouselOptions);
-      console.log('[Calory] Reviews carousel initialized.');
-    } else {
-      console.warn('[Calory] .reviews-carousel not found.');
-    }
+      focusOnSelect: true,
+      responsive: [
+        { breakpoint: 992, settings: { slidesToShow: 2 } },
+        { breakpoint: 768, settings: { slidesToShow: 1 } }
+      ]
+    });
+    console.log('[Calory] Reviews carousel initialized with 3s autoplay.');
+  } else {
+    console.warn('[Calory] .reviews-carousel not found.');
+  }
 
-  });
-})();
+});
