@@ -1,5 +1,5 @@
 /* ============================================================
-   Slick carousel init — BOTH carousels use identical settings
+   Slick carousel init — BOTH carousels share identical settings
    so they look and behave the same. 3s autoplay, pause on hover.
    ============================================================ */
 
@@ -37,8 +37,8 @@ jQuery(document).ready(function ($) {
     ]
   };
 
-  /* Helper: reset an already-rendered Slick carousel back to raw state
-     so Slick can rebuild it from scratch — mimicking first-load behavior. */
+  /* Helper: reset a pre-rendered Slick carousel back to raw state
+     so Slick can rebuild it cleanly on first load. */
   function resetSlick($el) {
     if ($el.hasClass('slick-initialized')) {
       $el.removeData('slick');
