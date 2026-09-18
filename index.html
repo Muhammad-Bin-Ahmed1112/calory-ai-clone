@@ -8,77 +8,78 @@
 
   <meta
     name="description"
-    content="Calory AI - Simple calorie counter and tracker."
-  >
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <link
-    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Roboto:wght@300;400;500;700&display=swap"
-    rel="stylesheet"
+    content="Calory AI - Simple calorie counter and tracker. Track calories, macros, water and food intake."
   >
 
   <link rel="stylesheet" href="style.css">
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap"
+    rel="stylesheet"
+  >
 </head>
 
 <body>
 
-<!-- ================= NAVBAR ================= -->
+<!-- ================= HEADER ================= -->
 
-<header class="header">
+<header class="header" id="header">
   <nav class="navbar">
-    <a href="#home" class="logo">
-      <img
-        src="https://calory.app/images/logo.png"
-        alt="Calory"
-      >
-    </a>
 
-    <button class="menu-toggle" id="menuToggle" aria-label="Open menu">
-      ☰
-    </button>
+    <div class="container nav-container">
 
-    <div class="nav-menu" id="navMenu">
+      <a href="#hero" class="logo">
+        <img
+          src="https://calory.app/images/logo.png"
+          alt="Calory Logo"
+        >
+      </a>
 
-      <div class="dropdown">
-        <button class="dropdown-button">
-          About <span>⌄</span>
-        </button>
+      <button class="menu-toggle" id="menuToggle">
+        ☰
+      </button>
 
-        <div class="dropdown-menu">
-          <a href="#why-calory">Why Calory</a>
-          <a href="#ai-food-scanner">AI Food Scanner</a>
-          <a href="#reviews">User Reviews</a>
-          <a href="#faqs">FAQs</a>
-          <a href="#press">In The Press</a>
+      <div class="nav-menu" id="navMenu">
+
+        <div class="dropdown">
+          <a href="#" class="nav-link">About ▾</a>
+
+          <div class="dropdown-menu">
+            <a href="#why-calory">Why Calory</a>
+            <a href="#ai-food-scanner">AI Food Scanner</a>
+            <a href="#reviews">User Reviews</a>
+            <a href="#faqs">FAQs</a>
+            <a href="#press">In The Press</a>
+          </div>
         </div>
+
+        <a href="#features" class="nav-link">Features</a>
+        <a href="#screens" class="nav-link">Screens</a>
+        <a href="#download" class="nav-link">Start Your Free Trial!</a>
+
+        <a
+          href="https://apps.apple.com/app/apple-store/id1441252752"
+          class="store-link"
+          target="_blank"
+        >
+          <img
+            src="https://calory.app/images/store_badges/header-appstore.png"
+            alt="Download on App Store"
+          >
+        </a>
+
+        <a
+          href="https://play.google.com/store/apps/details?id=com.funnmedia.calory"
+          class="store-link"
+          target="_blank"
+        >
+          <img
+            src="https://calory.app/images/store_badges/header-googleplay.png"
+            alt="Get it on Google Play"
+          >
+        </a>
+
       </div>
-
-      <a href="#features">Features</a>
-      <a href="#screenshots">Screens</a>
-
-      <a class="trial-link" href="#download">
-        Start Your Free Trial!
-      </a>
-
-      <a
-        class="store-link"
-        href="https://apps.apple.com/app/apple-store/id1441252752"
-        target="_blank"
-        rel="noopener"
-      >
-        App Store
-      </a>
-
-      <a
-        class="store-link"
-        href="https://play.google.com/store/apps/details?id=com.funnmedia.calory"
-        target="_blank"
-        rel="noopener"
-      >
-        Google Play
-      </a>
 
     </div>
   </nav>
@@ -87,20 +88,15 @@
 
 <!-- ================= HERO ================= -->
 
-<section class="hero" id="home">
+<section class="hero" id="hero">
 
   <div class="container hero-grid">
 
-    <div class="hero-content reveal">
-
-      <span class="eyebrow">
-        MEET CALORY AI
-      </span>
+    <div class="hero-text">
 
       <h1>
-        Your Simple<br>
-        Calorie Counter<br>
-        & Tracker
+        Meet Calory AI<br>
+        Your Simple Calorie Counter & Tracker
       </h1>
 
       <p>
@@ -113,36 +109,31 @@
         <a
           href="https://apps.apple.com/app/apple-store/id1441252752"
           target="_blank"
-          rel="noopener"
         >
-          <span class="store-icon"></span>
-          <span>
-            <small>Download on the</small>
-            App Store
-          </span>
+          <img
+            src="https://calory.app/images/store_badges/appstore.png"
+            alt="App Store"
+          >
         </a>
 
         <a
           href="https://play.google.com/store/apps/details?id=com.funnmedia.calory"
           target="_blank"
-          rel="noopener"
         >
-          <span class="store-icon">▶</span>
-          <span>
-            <small>GET IT ON</small>
-            Google Play
-          </span>
+          <img
+            src="https://calory.app/images/store_badges/header-googleplay.png"
+            alt="Google Play"
+          >
         </a>
 
       </div>
 
     </div>
 
-
-    <div class="hero-image reveal">
+    <div class="hero-image">
       <img
         src="https://calory.app/images/calory_ai_app.png"
-        alt="Calory AI application"
+        alt="Calory AI App"
       >
     </div>
 
@@ -157,18 +148,14 @@
 
   <div class="container two-column">
 
-    <div class="section-image reveal">
+    <div class="section-image">
       <img
         src="https://calory.app/images/image-06.png"
         alt="Why Calory"
       >
     </div>
 
-    <div class="section-content reveal">
-
-      <span class="section-label">
-        SIMPLE & POWERFUL
-      </span>
+    <div class="section-text">
 
       <h2>Stay On Track</h2>
 
@@ -176,40 +163,37 @@
         Recording your calories as you eat gives you a clearer
         picture of the calories you are consuming. It also
         enhances your awareness of food values and nutrient
-        levels, helping you make healthier choices.
+        levels, helping you make healthier choices when eating.
       </p>
 
-      <div class="feature-text">
-        <h3>Simple & User Friendly</h3>
-        <p>
-          Calory provides a quick and clutter-free way
-          to record your calories consumed.
-        </p>
-      </div>
+      <h3>Simple & User Friendly</h3>
 
-      <div class="feature-text">
-        <h3>Macro Tracking</h3>
-        <p>
-          Track daily goals for carbohydrates, protein,
-          fat, sodium and more.
-        </p>
-      </div>
+      <p>
+        Calory provides a quick and clutter free way to record
+        your calories consumed.
+      </p>
 
-      <div class="feature-text">
-        <h3>Visualize Progress</h3>
-        <p>
-          See weekly, monthly and yearly progress charts
-          that give you an overview of your history.
-        </p>
-      </div>
+      <h3>Macro Tracking</h3>
 
-      <div class="feature-text">
-        <h3>Apple Health</h3>
-        <p>
-          Calory works with Apple Health and keeps
-          your nutrition data in your private Health database.
-        </p>
-      </div>
+      <p>
+        Track and specify daily goals for macro nutrients like
+        carbs, proteins, fat, sodium and more.
+      </p>
+
+      <h3>Visualize Progress</h3>
+
+      <p>
+        Visualize your daily progress with interactive calorie
+        particles and see weekly, monthly and yearly progress
+        charts.
+      </p>
+
+      <h3>Apple Health</h3>
+
+      <p>
+        Calory works with Apple Health and your nutrition data
+        can be saved in your private Health database.
+      </p>
 
     </div>
 
@@ -218,41 +202,56 @@
 </section>
 
 
-<!-- ================= AI SCANNER ================= -->
+<!-- ================= AI FOOD SCANNER ================= -->
 
-<section class="scanner-section" id="ai-food-scanner">
+<section class="light-section" id="ai-food-scanner">
 
-  <div class="container scanner-grid">
+  <div class="container two-column">
 
-    <div class="scanner-content reveal">
-
-      <span class="section-label">
-        AI POWERED
-      </span>
+    <div class="section-text">
 
       <h2>AI Food Scanner</h2>
 
       <p>
         Don't see any nutrition facts on the menu?
-        No problem. Just scan it and Calory AI can
-        provide calories, macros and nutrients.
+        No problem. Just scan it and Calory AI can provide
+        calories, macros and nutrients.
       </p>
 
-      <a
-        class="primary-button"
-        href="https://apps.apple.com/app/apple-store/id1441252752"
-        target="_blank"
-        rel="noopener"
-      >
-        Download Today
-      </a>
+      <p>
+        Start tracking your calories with a picture.
+      </p>
+
+      <div class="store-buttons">
+
+        <a
+          href="https://apps.apple.com/app/apple-store/id1441252752"
+          target="_blank"
+        >
+          <img
+            src="https://calory.app/images/store_badges/appstore.png"
+            alt="App Store"
+          >
+        </a>
+
+        <a
+          href="https://play.google.com/store/apps/details?id=com.funnmedia.calory"
+          target="_blank"
+        >
+          <img
+            src="https://calory.app/images/store_badges/header-googleplay.png"
+            alt="Google Play"
+          >
+        </a>
+
+      </div>
 
     </div>
 
-    <div class="scanner-image reveal">
+    <div class="section-image">
       <img
         src="https://calory.app/images/calory-ai-food-scanning.png"
-        alt="AI Food Scanner"
+        alt="AI Food Scanning"
       >
     </div>
 
@@ -263,95 +262,85 @@
 
 <!-- ================= FEATURES ================= -->
 
-<section class="section features-section" id="features">
+<section class="section" id="features">
 
   <div class="container">
 
-    <div class="section-heading reveal">
-      <span class="section-label">FEATURES</span>
+    <div class="section-heading">
 
       <h2>Calory Top Features</h2>
 
       <p>
-        You will love the minimalistic design
-        and easy-to-use features.
+        You will love the minimalistic design and easy to use features!
       </p>
-    </div>
 
+    </div>
 
     <div class="features-grid">
 
-      <article class="feature-card reveal">
-        <div class="feature-number">01</div>
+      <div class="feature">
+        <span>01</span>
         <h3>Calorie Counting</h3>
         <p>
-          Quickly record the calories you consume
-          throughout your day.
+          Quickly record the calories you consume.
         </p>
-      </article>
+      </div>
 
-      <article class="feature-card reveal">
-        <div class="feature-number">02</div>
+      <div class="feature">
+        <span>02</span>
         <h3>Journal View</h3>
         <p>
-          Get a detailed snapshot of your day,
-          including your calorie count.
+          Get a detailed snapshot of your day and calorie count.
         </p>
-      </article>
+      </div>
 
-      <article class="feature-card reveal">
-        <div class="feature-number">03</div>
+      <div class="feature">
+        <span>03</span>
         <h3>Water Tracking</h3>
         <p>
-          Track how much water you drink
-          throughout the day.
+          Track how much water you drink throughout the day.
         </p>
-      </article>
+      </div>
 
-      <article class="feature-card reveal">
-        <div class="feature-number">04</div>
+      <div class="feature">
+        <span>04</span>
         <h3>Weight Tracking</h3>
         <p>
-          Weigh in daily and track your progress
-          over time.
+          Weigh in daily and track your weight.
         </p>
-      </article>
+      </div>
 
-      <article class="feature-card reveal">
-        <div class="feature-number">05</div>
+      <div class="feature">
+        <span>05</span>
         <h3>Macro Tracking</h3>
         <p>
-          Track your nutrition intake and
-          set daily macro goals.
+          Track your nutrition intake and macro goals.
         </p>
-      </article>
+      </div>
 
-      <article class="feature-card reveal">
-        <div class="feature-number">06</div>
-        <h3>Plates & Recipes</h3>
+      <div class="feature">
+        <span>06</span>
+        <h3>Plates and Recipes</h3>
         <p>
-          Create custom foods and explore
-          meal recipes.
+          Create custom foods and discover meal recipes.
         </p>
-      </article>
+      </div>
 
-      <article class="feature-card reveal">
-        <div class="feature-number">07</div>
+      <div class="feature">
+        <span>07</span>
         <h3>Statistics</h3>
         <p>
-          View weekly, monthly and yearly
-          progress charts.
+          View weekly, monthly and yearly progress charts.
         </p>
-      </article>
+      </div>
 
-      <article class="feature-card reveal">
-        <div class="feature-number">08</div>
+      <div class="feature">
+        <span>08</span>
         <h3>Siri Shortcuts</h3>
         <p>
-          Log foods without opening the app
-          using Siri.
+          Log foods without opening the app.
         </p>
-      </article>
+      </div>
 
     </div>
 
@@ -362,15 +351,11 @@
 
 <!-- ================= ICLOUD ================= -->
 
-<section class="icloud-section">
+<section class="light-section">
 
   <div class="container two-column">
 
-    <div class="icloud-content reveal">
-
-      <span class="section-label">
-        YOUR DATA, YOUR DEVICES
-      </span>
+    <div class="section-text">
 
       <h2>iCloud Sync</h2>
 
@@ -380,21 +365,23 @@
       </p>
 
       <p>
-        <strong>No signup required.</strong>
+        <strong>No signup required!</strong>
         Calory uses your personal secure iCloud storage.
       </p>
 
-      <span class="device-text">
+      <p>
         Available on iPhone, Apple Watch, iPad and MacOS.
-      </span>
+      </p>
 
     </div>
 
-    <div class="section-image reveal">
+    <div class="section-image">
+
       <img
         src="https://calory.app/images/image-03.png"
-        alt="Calory cross platform"
+        alt="Calory Cross Platform"
       >
+
     </div>
 
   </div>
@@ -404,98 +391,98 @@
 
 <!-- ================= SCREENSHOTS ================= -->
 
-<section class="section screenshots-section" id="screenshots">
+<section class="section" id="screens">
 
   <div class="container">
 
-    <div class="section-heading reveal">
-
-      <span class="section-label">
-        APP PREVIEW
-      </span>
+    <div class="section-heading">
 
       <h2>App Screens</h2>
 
       <p>
         Beautiful dark and light modes are available in Calory.
-        You can also customize theme colors.
+        You can also customize theme colors to your liking.
       </p>
 
     </div>
 
+    <div class="screenshots" id="screenshots">
 
-    <div class="screenshot-wrapper">
-
-      <button
-        class="slider-button previous"
-        id="previous"
-        aria-label="Previous"
-      >
-        ‹
-      </button>
-
-      <div class="screenshots-track" id="screenshotsTrack">
-
+      <div class="screen">
         <img
           src="https://calory.app/images/portfolio/screen-1.png"
           alt="Calory Dark Mode"
         >
+      </div>
 
+      <div class="screen">
         <img
           src="https://calory.app/images/portfolio/screen-2.png"
           alt="Calory Journal View"
         >
+      </div>
 
+      <div class="screen">
         <img
           src="https://calory.app/images/portfolio/screen-3.png"
           alt="Calory Siri Shortcuts"
         >
+      </div>
 
+      <div class="screen">
         <img
           src="https://calory.app/images/portfolio/screen-4.png"
           alt="Calory History"
         >
+      </div>
 
+      <div class="screen">
         <img
           src="https://calory.app/images/portfolio/screen-5.png"
           alt="Calory Quick Add"
         >
+      </div>
 
+      <div class="screen">
         <img
           src="https://calory.app/images/portfolio/screen-6.png"
           alt="Calory Main Screen"
         >
+      </div>
 
+      <div class="screen">
         <img
           src="https://calory.app/images/portfolio/screen-7.png"
           alt="Calory Settings"
         >
+      </div>
 
+      <div class="screen">
         <img
           src="https://calory.app/images/portfolio/screen-8.png"
           alt="Barcode Scanning"
         >
+      </div>
 
+      <div class="screen">
         <img
           src="https://calory.app/images/portfolio/screen-9.png"
-          alt="Calory Today Widget"
+          alt="Calory Widget"
         >
+      </div>
 
+      <div class="screen">
         <img
           src="https://calory.app/images/portfolio/screen-10.png"
           alt="Food Info"
         >
-
       </div>
 
-      <button
-        class="slider-button next"
-        id="next"
-        aria-label="Next"
-      >
-        ›
-      </button>
+    </div>
 
+    <div class="slider-controls">
+      <button id="prev">←</button>
+      <button id="next">→</button>
     </div>
 
   </div>
@@ -503,103 +490,60 @@
 </section>
 
 
-<!-- ================= TESTIMONIALS ================= -->
+<!-- ================= REVIEWS ================= -->
 
-<section class="section testimonials-section" id="reviews">
+<section class="light-section" id="reviews">
 
   <div class="container">
 
-    <div class="section-heading reveal">
-
-      <span class="section-label">USER FEEDBACK</span>
+    <div class="section-heading">
 
       <h2>User Feedback</h2>
 
       <p>
-        Our users love the simplicity
-        and clutter-free experience.
+        Our users love the simplicity and clutter free experience.
       </p>
 
     </div>
 
+    <div class="reviews">
 
-    <div class="testimonial-slider">
+      <article class="review">
+        <h3>Jadenks</h3>
+        <div class="stars">★★★★★</div>
+        <p>
+          I have been using this app for four months now,
+          and I have lost nearly 20 pounds! The best thing
+          about this app is the simplicity.
+        </p>
+      </article>
 
-      <button
-        class="testimonial-button"
-        id="testimonialPrev"
-      >
-        ‹
-      </button>
+      <article class="review">
+        <h3>1ninag</h3>
+        <div class="stars">★★★★★</div>
+        <p>
+          Even if you don't pay for the extra things this
+          app has to offer, it is still great.
+        </p>
+      </article>
 
-      <div class="testimonial-container">
+      <article class="review">
+        <h3>Staciie_96</h3>
+        <div class="stars">★★★★★</div>
+        <p>
+          Love the minimalist design and interactive beads.
+          The app is easy to use.
+        </p>
+      </article>
 
-        <div class="testimonial-card active">
-
-          <div class="quote">“</div>
-
-          <p>
-            I have been using this app for four months now,
-            and I have lost nearly 20 pounds! The best thing
-            about this app is the simplicity.
-          </p>
-
-          <strong>Jadenks</strong>
-
-        </div>
-
-
-        <div class="testimonial-card">
-
-          <div class="quote">“</div>
-
-          <p>
-            Even if you don't pay for the extra things
-            this app has to offer, it is still great.
-          </p>
-
-          <strong>1ninag</strong>
-
-        </div>
-
-
-        <div class="testimonial-card">
-
-          <div class="quote">“</div>
-
-          <p>
-            Love the minimalist design and interactive beads.
-            The app is easy to use without the crowded
-            add-ins other apps use.
-          </p>
-
-          <strong>Staciie_96</strong>
-
-        </div>
-
-
-        <div class="testimonial-card">
-
-          <div class="quote">“</div>
-
-          <p>
-            Simple and easy to use. Nothing overly complicated
-            so I can use it on the go without pressing a million
-            buttons.
-          </p>
-
-          <strong>Kearaaaaa</strong>
-
-        </div>
-
-      </div>
-
-      <button
-        class="testimonial-button"
-        id="testimonialNext"
-      >
-        ›
-      </button>
+      <article class="review">
+        <h3>Kearaaaaa</h3>
+        <div class="stars">★★★★★</div>
+        <p>
+          Simple and easy to use. Nothing overly complicated
+          so I can use it on the go.
+        </p>
+      </article>
 
     </div>
 
@@ -610,84 +554,54 @@
 
 <!-- ================= PRESS ================= -->
 
-<section class="section press-section" id="press">
+<section class="section" id="press">
 
   <div class="container">
 
-    <div class="section-heading reveal">
-
-      <span class="section-label">FEATURED</span>
-
+    <div class="section-heading">
       <h2>Calory In The Press</h2>
-
     </div>
-
 
     <div class="press-grid">
 
       <a
-        class="press-card reveal"
         href="https://lifehacker.com/if-you-hate-tracking-calories-try-calory-1834505080"
         target="_blank"
-        rel="noopener"
       >
-        <div class="press-logo">Lifehacker</div>
-
-        <h3>
-          If You Hate Tracking Calories,
-          Try 'Calory'
-        </h3>
-
-        <span>Read More →</span>
+        <h3>Lifehacker</h3>
+        <p>
+          If You Hate Tracking Calories, Try 'Calory'
+        </p>
       </a>
 
-
       <a
-        class="press-card reveal"
         href="https://9to5mac.com/2019/12/31/calory-apple-watch-dieting/"
         target="_blank"
-        rel="noopener"
       >
-        <div class="press-logo">9to5Mac</div>
-
-        <h3>
-          Diet tracking app 'Calory' adds
-          support for custom foods
-        </h3>
-
-        <span>Read More →</span>
+        <h3>9to5Mac</h3>
+        <p>
+          Diet tracking app Calory adds support for custom foods.
+        </p>
       </a>
 
-
       <a
-        class="press-card reveal"
         href="https://www.macstories.net/reviews/calory-review-simple-convenient-calorie-tracking/"
         target="_blank"
-        rel="noopener"
       >
-        <div class="press-logo">MacStories</div>
-
-        <h3>
+        <h3>MacStories</h3>
+        <p>
           Simple, Convenient Calorie Tracking
-        </h3>
-
-        <span>Read More →</span>
+        </p>
       </a>
 
-
       <a
-        class="press-card reveal"
         href="https://www.popsci.com/story/diy/new-year-resolution-goal-habit-apps/"
         target="_blank"
-        rel="noopener"
       >
-        <div class="press-logo">Popular Science</div>
-
-        <h3>
+        <h3>Popular Science</h3>
+        <p>
           Drop that holiday weight with Calory
-        </h3>
-
-        <span>Read More →</span>
+        </p>
       </a>
 
     </div>
@@ -699,20 +613,15 @@
 
 <!-- ================= FAQ ================= -->
 
-<section class="section faq-section" id="faqs">
+<section class="light-section" id="faqs">
 
   <div class="container">
 
-    <div class="section-heading reveal">
-
-      <span class="section-label">SUPPORT</span>
-
-      <h2>Frequently Asked Questions</h2>
-
+    <div class="section-heading">
+      <h2>Frequently Asked Support Questions</h2>
     </div>
 
-
-    <div class="faq-list">
+    <div class="faq">
 
       <div class="faq-item">
 
@@ -724,8 +633,8 @@
         <div class="faq-answer">
           <p>
             When you turn on the Burned Calories feature,
-            Calory can read data from the Active Energy
-            section of Apple Health.
+            Calory can read data from the Active Energy section
+            of Apple Health.
           </p>
         </div>
 
@@ -741,9 +650,9 @@
 
         <div class="faq-answer">
           <p>
-            Premium features allow you to track more
-            information about your diet and provide access
-            to additional food databases and features.
+            Premium features let you track more information
+            about your diet and provide access to additional
+            food databases and other features.
           </p>
         </div>
 
@@ -760,7 +669,6 @@
         <div class="faq-answer">
           <p>
             Water Tracking is a premium feature.
-            Lifetime, monthly and yearly options are available.
           </p>
         </div>
 
@@ -770,14 +678,14 @@
       <div class="faq-item">
 
         <button class="faq-question">
-          Does Calory track macronutrients?
+          Does Calory track macro nutrients?
           <span>+</span>
         </button>
 
         <div class="faq-answer">
           <p>
-            Yes. Calory allows you to track your daily
-            intake of macronutrients in addition to calories.
+            Yes. Calory lets you track daily intake of
+            macro nutrients in addition to calories.
           </p>
         </div>
 
@@ -793,8 +701,8 @@
 
         <div class="faq-answer">
           <p>
-            Yes. Custom foods can be saved so that
-            you can quickly record them in the future.
+            Yes. Custom foods can be saved so they can
+            be recorded again in the future.
           </p>
         </div>
 
@@ -809,34 +717,27 @@
 
 <!-- ================= DOWNLOAD ================= -->
 
-<section class="download-section" id="download">
+<section class="download" id="download">
 
   <div class="container download-grid">
 
-    <div class="download-image reveal">
-
+    <div>
       <img
         src="https://calory.app/images/calory-iphone-2.png"
         alt="Calory iPhone"
       >
-
     </div>
 
-
-    <div class="download-content reveal">
-
-      <span class="section-label light">
-        GET STARTED
-      </span>
+    <div>
 
       <h2>
-        Start tracking what
-        you eat today!
+        Start tracking what you eat today!
       </h2>
 
       <p>
-        Track your daily calorie intake with
-        a simple and beautiful calorie tracker.
+        If you are looking for a calculator to track your
+        daily calorie intake, Calory is designed to make
+        tracking simple.
       </p>
 
       <div class="store-buttons">
@@ -844,25 +745,21 @@
         <a
           href="https://apps.apple.com/app/apple-store/id1441252752"
           target="_blank"
-          rel="noopener"
         >
-          <span class="store-icon"></span>
-          <span>
-            <small>Download on the</small>
-            App Store
-          </span>
+          <img
+            src="https://calory.app/images/store_badges/appstore.png"
+            alt="App Store"
+          >
         </a>
 
         <a
           href="https://play.google.com/store/apps/details?id=com.funnmedia.calory"
           target="_blank"
-          rel="noopener"
         >
-          <span class="store-icon">▶</span>
-          <span>
-            <small>GET IT ON</small>
-            Google Play
-          </span>
+          <img
+            src="https://calory.app/images/store_badges/header-googleplay.png"
+            alt="Google Play"
+          >
         </a>
 
       </div>
@@ -876,68 +773,48 @@
 
 <!-- ================= FOOTER ================= -->
 
-<footer class="footer">
+<footer>
 
   <div class="container footer-grid">
 
     <div>
 
       <img
-        class="footer-logo"
         src="https://calory.app/images/funn-logo-dark.png"
         alt="Funn Media"
+        class="footer-logo"
       >
 
       <p>
-        Creating awesome mobile apps that help you
-        reach your goals, create good habits,
-        stay hydrated, focus and improve your life!
+        Creating awesome mobile apps that help you reach
+        your goals, create good habits, stay hydrated,
+        focus and improve your life!
       </p>
 
-      <a
-        href="https://funnmedia.com/"
-        target="_blank"
-        rel="noopener"
-      >
-        FunnMedia.com
-      </a>
+      <p>
+        Check out our apps at:
+        <a href="https://funnmedia.com/" target="_blank">
+          FunnMedia.com
+        </a>
+      </p>
 
     </div>
 
+    <div class="social">
 
-    <div class="footer-social">
-
-      <h3>Follow Calory</h3>
-
-      <a
-        href="https://www.instagram.com/calory_app/"
-        target="_blank"
-        rel="noopener"
-      >
+      <a href="https://www.instagram.com/calory_app/" target="_blank">
         Instagram
       </a>
 
-      <a
-        href="https://www.tiktok.com/@calory.app"
-        target="_blank"
-        rel="noopener"
-      >
+      <a href="https://www.tiktok.com/@calory.app" target="_blank">
         TikTok
       </a>
 
-      <a
-        href="https://x.com/calory_app"
-        target="_blank"
-        rel="noopener"
-      >
+      <a href="https://x.com/calory_app" target="_blank">
         X
       </a>
 
-      <a
-        href="https://www.facebook.com/caloryapp/"
-        target="_blank"
-        rel="noopener"
-      >
+      <a href="https://www.facebook.com/caloryapp/" target="_blank">
         Facebook
       </a>
 
@@ -945,29 +822,8 @@
 
   </div>
 
-
-  <div class="footer-bottom">
-
-    <p>
-      © 2026 Funn Media. All Rights Reserved.
-    </p>
-
-    <div>
-
-      <a href="https://calory.app/calory-presskit.html">
-        Press Kit
-      </a>
-
-      <a href="https://www.iubenda.com/privacy-policy/36945519">
-        Privacy
-      </a>
-
-      <a href="https://funnmedia.zendesk.com/hc/en-us/categories/360001621092-Calory">
-        Support
-      </a>
-
-    </div>
-
+  <div class="copyright">
+    © 2026 Funn Media. All Rights Reserved.
   </div>
 
 </footer>
