@@ -1,0 +1,135 @@
+/* ============================================================
+   Local fallback CSS only.
+   All main template styling is loaded from https://calory.app/css/style.css
+   and https://calory.app/css/responsive.css in the HTML head.
+   This file ensures the reviews & screens carousels share the exact
+   same appearance even if the remote stylesheets are unreachable.
+   ============================================================ */
+
+/* Base */
+body {
+  font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  color: #333;
+  font-weight: 300;
+  margin: 0;
+  padding: 0;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+img { max-width: 100%; height: auto; }
+#page { overflow: hidden; }
+
+/* Animated fallback — original template hides .animated until visible */
+.animated { visibility: hidden; }
+.visible { visibility: visible; }
+
+/* ---------- SCREENSHOTS CAROUSEL ---------- */
+.screenshots-wrap { position: relative; margin-bottom: 100px; }
+.screens-carousel .carousel-item {
+  padding: 0 10px;
+  text-align: center;
+  opacity: 0.25;
+  transition: all 450ms ease-in-out;
+}
+.screens-carousel .carousel-item.slick-current { opacity: 1; }
+.screens-carousel .carousel-item img {
+  border: solid 1px #d8d9dd;
+  border-radius: 12px;
+}
+
+/* ---------- REVIEWS CAROUSEL ---------- */
+/* Same wrapper padding + same slide widths as the screens carousel
+   so both carousels look identical. */
+.reviews-carousel {
+  position: relative;
+  margin-bottom: 100px;
+}
+.reviews-carousel .review-1 {
+  width: 370px;
+  padding: 30px 28px;
+  margin: 0 10px;
+  text-align: center;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.06);
+  opacity: 0.25;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
+}
+.reviews-carousel .review-1.slick-current {
+  opacity: 1;
+  transform: scale(1.03);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.10);
+}
+.reviews-carousel .review-1 .testimonial-avatar { margin-bottom: 6px; }
+.reviews-carousel .review-1 .testimonial-autor {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  color: #1a1a2e;
+  font-size: 1rem;
+  margin: 0;
+}
+.reviews-carousel .review-1 .app-rating { height: 16px; margin-bottom: 15px; }
+.reviews-carousel .review-1 p {
+  color: #555;
+  font-size: 0.95rem;
+  line-height: 1.65;
+  margin: 0;
+}
+
+/* ---------- SHARED SLICK ARROWS & DOTS ---------- */
+.screens-carousel .slick-prev,
+.screens-carousel .slick-next,
+.reviews-carousel .slick-prev,
+.reviews-carousel .slick-next {
+  width: 40px;
+  height: 40px;
+  z-index: 4;
+}
+.screens-carousel .slick-prev:before,
+.screens-carousel .slick-next:before,
+.reviews-carousel .slick-prev:before,
+.reviews-carousel .slick-next:before {
+  font-family: 'slick';
+  font-size: 28px;
+  color: #6c89ee;
+  opacity: 0.85;
+}
+.screens-carousel .slick-prev { left: -45px; }
+.screens-carousel .slick-next { right: -45px; }
+.reviews-carousel .slick-prev { left: -45px; }
+.reviews-carousel .slick-next { right: -45px; }
+
+.screens-section .slick-dots,
+.reviews-section .slick-dots {
+  position: absolute;
+  bottom: -100px;
+}
+.reviews-section .slick-dots li button:before,
+.screens-section .slick-dots li button:before {
+  content: "";
+  background: #ccc;
+  border-radius: 50%;
+  opacity: 1;
+  width: 8px;
+  height: 8px;
+  left: auto;
+  transition: all ease-in-out 0.2s;
+}
+.reviews-section .slick-dots li.slick-active button:before,
+.screens-section .slick-dots li.slick-active button:before {
+  background: #666;
+}
+
+@media (max-width: 992px) {
+  .screens-carousel .slick-prev,
+  .reviews-carousel .slick-prev { left: -20px; }
+  .screens-carousel .slick-next,
+  .reviews-carousel .slick-next { right: -20px; }
+}
+@media (max-width: 576px) {
+  .reviews-carousel .review-1 { padding: 24px 20px; }
+  .screens-carousel .slick-prev,
+  .reviews-carousel .slick-prev { left: 0; }
+  .screens-carousel .slick-next,
+  .reviews-carousel .slick-next { right: 0; }
+}
