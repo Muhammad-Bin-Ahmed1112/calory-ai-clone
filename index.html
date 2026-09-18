@@ -762,10 +762,259 @@ Nothing overly complicated so I can use it on the go without pressing a million 
 <!-- END BOTTOM FOOTER --></div>
 <!-- End container --></footer>
 <!-- END FOOTER-2 --></div>
-<!-- END PAGE CONTENT --><!-- EXTERNAL SCRIPTS
-		============================================= --><script src="js/jquery-3.2.1.min.js"></script><script src="js/bootstrap.min.js"></script><script src="js/fontawesome-all.js"></script><script src="js/modernizr.custom.js"></script><script src="js/jquery.easing.js"></script><script src="js/retina.js"></script><!-- <script src="js/jquery.stellar.min.js"></script> --><script src="js/jquery.scrollto.js"></script><script src="js/jquery.appear.js"></script><script src="js/slick.min.js"></script><script src="js/jquery.magnific-popup.min.js"></script><script src="js/jquery.ajaxchimp.min.js"></script><script src="js/contact-form.js"></script><script src="js/quick-form.js"></script><script src="js/comment-form.js"></script><script src="js/jquery.validate.min.js"></script><!-- Custom Script --><script src="js/custom.js"></script><!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. --><!-- [if lt IE 9]>
-			<script src="js/html5shiv.js" type="text/javascript"></script>
-			<script src="js/respond.min.js" type="text/javascript"></script>
-		<![endif] -->
+<!-- END PAGE CONTENT -->
+	<!-- EXTERNAL SCRIPTS================ -->
+		<script src="js/jquery-3.2.1.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/fontawesome-all.js"></script>
+		<script src="js/modernizr.custom.js"></script>
+		<script src="js/jquery.easing.js"></script>
+		<script src="js/retina.js"></script>
+		<script src="js/jquery.scrollto.js"></script>
+		<script src="js/jquery.appear.js"></script>
+		<script src="js/slick.min.js"></script>
+		<script src="js/jquery.magnific-popup.min.js"></script>
+		<script src="js/jquery.ajaxchimp.min.js"></script>
+		<script src="js/contact-form.js"></script>
+		<script src="js/quick-form.js"></script>
+		<script src="js/comment-form.js"></script>
+		<script src="js/jquery.validate.min.js"></script>
+		<!-- Custom Script -->
+		<script src="js/custom.js"></script>
+		<!-- Study-project notice popup -->
+<style>
+    #study-overlay {
+        position: fixed;
+        inset: 0;
+        background: rgba(10, 10, 20, 0.55);
+        backdrop-filter: blur(4px);
+        -webkit-backdrop-filter: blur(4px);
+        z-index: 999999;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        animation: studyFadeIn 0.25s ease-out;
+    }
+    #study-overlay * { box-sizing: border-box; }
+
+    @keyframes studyFadeIn {
+        from { opacity: 0; }
+        to   { opacity: 1; }
+    }
+    @keyframes studyPopIn {
+        from { opacity: 0; transform: translateY(12px) scale(0.98); }
+        to   { opacity: 1; transform: translateY(0) scale(1); }
+    }
+
+    .study-card {
+        background: #ffffff;
+        color: #1a1a2e;
+        width: 100%;
+        max-width: 520px;
+        border-radius: 16px;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+        padding: 28px 28px 24px;
+        animation: studyPopIn 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+        position: relative;
+    }
+
+    .study-icon {
+        width: 52px;
+        height: 52px;
+        border-radius: 12px;
+        background: linear-gradient(135deg, #6a5cff 0%, #8b7bff 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 26px;
+        margin-bottom: 16px;
+    }
+
+    .study-title {
+        font-size: 20px;
+        font-weight: 700;
+        margin: 0 0 10px;
+        color: #1a1a2e;
+        letter-spacing: -0.01em;
+    }
+
+    .study-body {
+        font-size: 14.5px;
+        line-height: 1.6;
+        color: #444;
+        margin: 0 0 16px;
+    }
+
+    .study-body a {
+        color: #5b4bff;
+        text-decoration: none;
+        font-weight: 500;
+    }
+    .study-body a:hover { text-decoration: underline; }
+
+    .study-bullets {
+        list-style: none;
+        padding: 0;
+        margin: 0 0 20px;
+        font-size: 13.5px;
+        color: #555;
+    }
+    .study-bullets li {
+        padding-left: 22px;
+        position: relative;
+        margin-bottom: 6px;
+        line-height: 1.5;
+    }
+    .study-bullets li::before {
+        content: "✓";
+        position: absolute;
+        left: 0;
+        top: 0;
+        color: #10b981;
+        font-weight: 700;
+    }
+
+    .study-actions {
+        display: flex;
+        gap: 10px;
+        justify-content: flex-end;
+        flex-wrap: wrap;
+    }
+
+    .study-btn {
+        border: none;
+        border-radius: 10px;
+        padding: 10px 20px;
+        font-size: 14px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: transform 0.12s ease, background 0.15s ease;
+        font-family: inherit;
+    }
+    .study-btn:active { transform: scale(0.97); }
+
+    .study-btn-primary {
+        background: linear-gradient(135deg, #6a5cff 0%, #8b7bff 100%);
+        color: #fff;
+    }
+    .study-btn-primary:hover { background: linear-gradient(135deg, #5a4cef 0%, #7b6bef 100%); }
+
+    .study-btn-ghost {
+        background: transparent;
+        color: #666;
+        border: 1px solid #e0e0e8;
+    }
+    .study-btn-ghost:hover { background: #f6f6fa; }
+
+    .study-close {
+        position: absolute;
+        top: 12px;
+        right: 12px;
+        background: transparent;
+        border: none;
+        color: #999;
+        font-size: 22px;
+        line-height: 1;
+        cursor: pointer;
+        padding: 4px 8px;
+        border-radius: 6px;
+    }
+    .study-close:hover { background: #f0f0f5; color: #333; }
+
+    @media (max-width: 520px) {
+        .study-card { padding: 24px 20px 20px; }
+        .study-title { font-size: 18px; }
+        .study-actions { flex-direction: column-reverse; }
+        .study-btn { width: 100%; }
+    }
+</style>
+
+<div id="study-overlay" role="dialog" aria-modal="true" aria-labelledby="study-title" hidden>
+    <div class="study-card">
+        <button class="study-close" type="button" aria-label="Close" onclick="document.getElementById('study-overlay').remove()">&times;</button>
+
+        <div class="study-icon" aria-hidden="true">📚</div>
+
+        <h2 id="study-title" class="study-title">Study Project</h2>
+
+        <p class="study-body">
+            This page is a <strong>static mirror</strong> of
+            <a href="https://calory.app" target="_blank" rel="noopener">calory.app</a>
+            recreated for front-end practice. I did <strong>not</strong> design or build the
+            original — all design, copy, and imagery belong to
+            <a href="https://funnmedia.com" target="_blank" rel="noopener">Funn Media</a>.
+        </p>
+
+        <ul class="study-bullets">
+            <li>Fully local — zero external dependencies</li>
+            <li>Trackers and archive scripts removed</li>
+            <li>Deployed on GitHub Pages for demonstration</li>
+        </ul>
+
+        <div class="study-actions">
+            <a class="study-btn study-btn-ghost"
+               href="https://funnmedia.com" target="_blank" rel="noopener"
+               style="text-decoration:none; display:inline-block; text-align:center; line-height:1.4;">
+                Visit original author
+            </a>
+            <button class="study-btn study-btn-primary" type="button"
+                    onclick="document.getElementById('study-overlay').remove()">
+                I understand
+            </button>
+        </div>
+    </div>
+</div>
+
+<script>
+(function () {
+    // Show only once per browser session
+    try {
+        if (sessionStorage.getItem('studyNoticeDismissed') === '1') return;
+    } catch (e) {
+        // sessionStorage blocked (private mode, etc.) — show anyway
+    }
+
+    var overlay = document.getElementById('study-overlay');
+    if (!overlay) return;
+
+    overlay.hidden = false;
+
+    // Close on Escape
+    document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') dismiss();
+    });
+
+    // Close on backdrop click (not card click)
+    overlay.addEventListener('click', function (e) {
+        if (e.target === overlay) dismiss();
+    });
+
+    // Mark as dismissed after the user closes it
+    var observer = new MutationObserver(function () {
+        if (!document.getElementById('study-overlay')) {
+            try { sessionStorage.setItem('studyNoticeDismissed', '1'); } catch (e) {}
+            observer.disconnect();
+        }
+    });
+    observer.observe(document.body, { childList: true, subtree: true });
+
+    function dismiss() {
+        overlay.remove();
+        try { sessionStorage.setItem('studyNoticeDismissed', '1'); } catch (e) {}
+    }
+
+    // Prevent body scroll while open
+    document.body.style.overflow = 'hidden';
+    var resetObserver = new MutationObserver(function () {
+        if (!document.getElementById('study-overlay')) {
+            document.body.style.overflow = '';
+            resetObserver.disconnect();
+        }
+    });
+    resetObserver.observe(document.body, { childList: true, subtree: true });
+})();
+</script>
 	</body>
 </html>
